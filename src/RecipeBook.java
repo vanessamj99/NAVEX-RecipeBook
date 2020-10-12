@@ -8,8 +8,9 @@ public class RecipeBook {
             //if this is the first time this is being run, an exception will be thrown and caught by the catch block where serialization and file reading occur.
             FileInputStream savedFiles = new FileInputStream("MyListOfRecipes.ser");
             ObjectInputStream ReadSavedFiles = new ObjectInputStream(savedFiles);
-            RecipeBook info = new RecipeBook();
-            info.recipes = (ArrayList<RecipesDetails>) ReadSavedFiles.readObject();
+            // RecipeBook info = new RecipeBook();
+            RecipeBook.recipes = (ArrayList<RecipesDetails>) ReadSavedFiles.readObject();
+            
             ReadSavedFiles.close();
             savedFiles.close();
 
@@ -35,14 +36,17 @@ public class RecipeBook {
                 recipes.add(recipeInfo);
 
             }
+            reading.close();
 
         }
+        System.out.println("Welcome to NAVEX's Recipe Book!");
         Recipes recipeList = new Recipes();
         recipeList.create();
 
-        //checking the contents of the recipe list
-        // for(int j = 0; j < RecipeBook.recipes.size(); j++){
-        //     System.out.println(RecipeBook.recipes.get(j).title + " " + RecipeBook.recipes.get(j).ingredients);
-        // }
+        // checking the contents of the recipe list
+        for(int j = 0; j < RecipeBook.recipes.size(); j++){
+            System.out.println(RecipeBook.recipes.get(j).title + " " + RecipeBook.recipes.get(j).ingredients + " " + RecipeBook.recipes.get(j).steps);
+        }
+
     }
 }

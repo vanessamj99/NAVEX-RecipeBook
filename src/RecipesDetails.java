@@ -1,5 +1,9 @@
 import java.io.*;
 public class RecipesDetails implements Serializable{
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     protected String title;
     protected String description;
     protected String ingredients;
@@ -17,7 +21,4 @@ public class RecipesDetails implements Serializable{
     public void printRecipeSteps(){
         
     }
-
-
-
 }
