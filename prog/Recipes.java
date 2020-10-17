@@ -11,8 +11,8 @@ public class Recipes {
     Scanner yesOrNo = new Scanner(System.in);
     String recipeTitle;
     String recipeDescription;
-    String recipeIngredients;
-    String recipeSteps;
+    String recipeIngredients = "";
+    String recipeSteps = "";
     String recipeTags;
     String answer;
     public void create(){
@@ -26,7 +26,9 @@ public class Recipes {
         for(int i=0; i < numIngs; i++){
             int j = i + 1;
             System.out.println(j + ": ");
-            recipeIngredients = recipeIngredients + ingredients.nextLine();
+
+            recipeIngredients += "\n" + j + ": " + ingredients.nextLine() + "\n";
+            
             
         }
         // recipeIngredients = ingredients.nextLine();
@@ -37,7 +39,7 @@ public class Recipes {
             int j = i + 1;
             System.out.println(j + ": ");
 
-            recipeSteps = recipeSteps + steps.nextLine();
+            recipeSteps += "\n" + j + ": " + steps.nextLine() + "\n";
             
 
         }
@@ -80,7 +82,7 @@ public class Recipes {
                 System.out.println("Recipe Found!" + "\n");
                 // Xintong, this is where we could call the explore function with the following details of the recipe
                 explore(RecipeBook.recipes.get(j));
-                System.out.println(RecipeBook.recipes.get(j).title + " " + RecipeBook.recipes.get(j).ingredients + " " + RecipeBook.recipes.get(j).steps);
+                //System.out.println(RecipeBook.recipes.get(j).title + " " + RecipeBook.recipes.get(j).ingredients + " " + RecipeBook.recipes.get(j).steps);
                 break;
             } 
         }
@@ -104,16 +106,24 @@ public class Recipes {
             System.out.println("* Ingredients: " + recipe.ingredients);
             System.out.println("* Steps: ");
             for(int s = 0; s < steps.length; s++) {
-                System.out.println(s + ". " + steps[s]);
+                // System.out.println(s + ": " + steps[s]);
+                System.out.println(steps[s]);
             }
         }
         else if(option == 'S') {
             Scanner stop = new Scanner(System.in); // use it to allow user to go step by step
+            System.out.println("* Ingredients: " + recipe.ingredients);
+            System.out.println("Going step-by-step now (press enter twice): ");
             for(int s = 0; s < steps.length; s++) {
-                System.out.print(steps[s]);
-                String dummy = stop.nextLine(); // use it to allow user to go step by step
+                //System.out.print(steps[s]);
+                String[] parseStps = steps[s].split("\n"); 
+                // String dummy = stop.next(); // use it to allow user to go step by step
+                for(int i = 0; i < parseStps.length; i++){
+                    String dummy = stop.nextLine();
+                    System.out.println(parseStps[i]);
+                }
             }
-            System.out.println("That's it! You've done :)");
+            System.out.println("That's it! You're done :)");
         }
     }
 

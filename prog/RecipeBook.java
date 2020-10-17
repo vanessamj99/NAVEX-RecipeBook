@@ -37,6 +37,7 @@ public class RecipeBook {
         }
         System.out.println("Welcome to NAVEX's Recipe Book!");
         System.out.println("Would you like to add (a/A), search (s/S), or browse recipes (b/B)? ");
+        System.out.println("For the help menu type help(h/H)");
 
         Scanner firstAnswer = new Scanner(System.in);
         String userAction = firstAnswer.nextLine();
@@ -66,20 +67,21 @@ public class RecipeBook {
             recipeList.retrieve(searchWords);
             
         } else if(userAction.equalsIgnoreCase("browse") || userAction.compareToIgnoreCase("b") == 0 ){
-            System.out.println("browsing!");
+            System.out.println("Displying all recipes! ");
             for(int i = 0; i < RecipeBook.recipes.size(); i++){
-                System.out.println(RecipeBook.recipes.get(i).title);
+                System.out.println(RecipeBook.recipes.get(i).title + ": " + RecipeBook.recipes.get(i).description);
             }
             System.out.println("Please enter the recipe you would like to look at: ");
             Scanner key = new Scanner(System.in);
             String findWo = key.nextLine();
             recipeList.retrieve(findWo);
-
-
             
-            
-        } else { //handle empty or invalid commands
-            System.out.println("please enter a command...");
+        } else if(userAction.equalsIgnoreCase("help") || userAction.compareToIgnoreCase("h") == 0 ) { 
+            System.out.println("To add a recipe: add, a, or A\n");
+            System.out.println("To browse all recipes: browse, b, or B\n");
+            System.out.println("To search for a recipe: search, s, or S\n");
+        } else {
+            System.out.println("invalid command, type help (h/H) for help menu");
         }
     }
 }
