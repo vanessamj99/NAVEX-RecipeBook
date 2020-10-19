@@ -116,6 +116,7 @@ public class RecipeBook {
                     break;
                 } else {
                     System.out.println("INVALID COMMAND! Please type help (h/H) for help menu if necessary...");
+                    break;
             }
         }
 
