@@ -66,8 +66,8 @@ public class RecipeBook {
                 	System.out.println("RECIPE SEARCHING...");
                     // // start searching for recipes that have already been created
                     Scanner search = new Scanner(System.in);
-                    System.out.println("No worries! We accetp FUZZY SEARCH!");
-                    System.out.println(">> Please enter your search word (can be some reciple titile or tag): ");
+                    System.out.println("No worries! We accept FUZZY SEARCH!");
+                    System.out.println(">> Please enter your search word (can be some reciple title or tag): ");
                     
                     String searchWords = search.nextLine();
                     // // check for naive string match with recipe name.
@@ -87,7 +87,7 @@ public class RecipeBook {
                     
                 } else if(userAction.equalsIgnoreCase("browse") || userAction.compareToIgnoreCase("b") == 0 ){
                 	System.out.println();
-                    System.out.println("Displying all recipes...");
+                    System.out.println("Displaying all recipes...");
                     for(int i = 0; i < RecipeBook.recipes.size(); i++){
                         System.out.println(RecipeBook.recipes.get(i).title + ": " + RecipeBook.recipes.get(i).description);
                     }
