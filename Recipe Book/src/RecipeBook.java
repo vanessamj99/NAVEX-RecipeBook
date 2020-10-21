@@ -45,11 +45,25 @@ public class RecipeBook {
 
         //getting user input for it they want to continue or exit
         Scanner continueOrExit = new Scanner(System.in);
+        System.out.println("***    ***           *      ***           ***   ************   ****       ****");
+        System.out.println("*  *   * *          * *      * *         * *    * **********    *  *     *  *");
+        System.out.println("*   *  * *         * * *      * *       * *     * *              *  *   *  *");
+        System.out.println("* *  * * *        * * * *      * *     * *      * *               *  * *  *");
+        System.out.println("* **  ** *       * *   * *      * *   * *       * **********       *     *");
+        System.out.println("* * *  * *      * ******* *      * * * *        * **********       *  *  *");
+        System.out.println("* *  *   *     * ********* *      * * *         * *               *  * *  *");
+        System.out.println("* *   *  *    * *         * *      * *          * **********     *  *   *  *");
+        System.out.println("***    ***   ***           ***      *           ************    ****     ****");
+        System.out.println();
+        System.out.println();
+        System.out.println();
         String conOrExit;
-
-        System.out.println("-------------Welcome to NAVEX's Recipe Book-------------");
+        System.out.println(" ==========================================");
+        System.out.println("|     Welcome to NAVEX's Recipe Book       |");
+        System.out.println(" ==========================================");
         while(notFinished){
-        	System.out.println(">> For the help menu, please type 'h/H'");
+        	System.out.println();
+        	System.out.println(">> For the help menu, please type h/H'");
             System.out.println(">> Would you like to add (a/A), search (s/S), or browse recipes (b/B)? ");
 
             Scanner firstAnswer = new Scanner(System.in);
@@ -63,7 +77,10 @@ public class RecipeBook {
                     break;
                 } else if(userAction.equalsIgnoreCase("search") || userAction.compareToIgnoreCase("s") == 0 ){
                 	System.out.println();
-                	System.out.println("RECIPE SEARCHING...");
+                	System.out.println();
+                	System.out.println("* * * * * * * * * * * *");
+                	System.out.println("* RECIPE SEARCHING... *");
+                	System.out.println("* * * * * * * * * * * *");
                     // // start searching for recipes that have already been created
                     Scanner search = new Scanner(System.in);
                     System.out.println("No worries! We accept FUZZY SEARCH!");
@@ -87,7 +104,10 @@ public class RecipeBook {
                     
                 } else if(userAction.equalsIgnoreCase("browse") || userAction.compareToIgnoreCase("b") == 0 ){
                 	System.out.println();
-                    System.out.println("Displaying all recipes...\n");
+                	System.out.println();
+                	System.out.println("* * * * * *  * * * * * * * * **");
+                    System.out.println("* Displaying all recipes...   *");
+                	System.out.println("* * * * * * * * * * * * * * * *");
                     for(int i = 0; i < RecipeBook.recipes.size(); i++){
                         System.out.println(RecipeBook.recipes.get(i).title + ": " + RecipeBook.recipes.get(i).description);
                     }
@@ -100,7 +120,16 @@ public class RecipeBook {
                     
                 } else if(userAction.equalsIgnoreCase("help") || userAction.compareToIgnoreCase("h") == 0 ) {
                 	System.out.println();
-                	System.out.println("===============================================");
+                	 System.out.println("***    ***           *      ***           ***   ************   ****       ****");
+                     System.out.println("*  *   * *          * *      * *         * *    * **********    *  *     *  *");
+                     System.out.println("*   *  * *         * * *      * *       * *     * *              *  *   *  *");
+                     System.out.println("* *  * * *        * * * *      * *     * *      * *               *  * *  *");
+                     System.out.println("* **  ** *       * *   * *      * *   * *       * **********       *     *");
+                     System.out.println("* * *  * *      * ******* *      * * * *        * **********       *  *  *");
+                     System.out.println("* *  *   *     * ********* *      * * *         * *               *  * *  *");
+                     System.out.println("* *   *  *    * *         * *      * *          * **********     *  *   *  *");
+                     System.out.println("***    ***   ***           ***      *           ************    ****     ****");
+                	System.out.println("\n\n===============================================\n");
                 	System.out.println("Welcome to NAVEX's digital recipe book!");
                 	System.out.println("Here you can create your own recipe and find recipes summarized by other people too!");
                 	System.out.println();
@@ -127,7 +156,9 @@ public class RecipeBook {
         conOrExit = continueOrExit.nextLine();
         if(conOrExit.equalsIgnoreCase("exit") || conOrExit.compareToIgnoreCase("e") == 0 ){
         	System.out.println("\nThank you and have a good day!");
-        	System.out.println("-- End --");
+        	System.out.println(" ----------------");
+        	System.out.println("|       END      |");
+        	System.out.println(" ----------------");
             continueOrExitQuestion = false;
         }
         else if(conOrExit.equalsIgnoreCase("continue") || conOrExit.compareToIgnoreCase("c") == 0 ){
