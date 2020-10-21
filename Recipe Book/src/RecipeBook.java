@@ -87,7 +87,7 @@ public class RecipeBook {
                     
                 } else if(userAction.equalsIgnoreCase("browse") || userAction.compareToIgnoreCase("b") == 0 ){
                 	System.out.println();
-                    System.out.println("Displaying all recipes...");
+                    System.out.println("Displaying all recipes...\n");
                     for(int i = 0; i < RecipeBook.recipes.size(); i++){
                         System.out.println(RecipeBook.recipes.get(i).title + ": " + RecipeBook.recipes.get(i).description);
                     }
