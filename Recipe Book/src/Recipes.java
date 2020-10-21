@@ -19,7 +19,10 @@ public class Recipes {
     String answer;
     public void create(){
     	System.out.println();
-    	System.out.println("RECIPE CREATING...");
+    	System.out.println();
+    	System.out.println("* * * * * * * * * * * *");
+    	System.out.println("* RECIPE CREATING...  *");
+    	System.out.println("* * * * * * * * * * * *");
         System.out.println(">> What is the recipe title?: ");
         this.recipeTitle = title.nextLine();
         if(this.checkRepeat(this.recipeTitle)) System.out.println("Title ALREADY EXISTED! Please change your title a little bit...:(");
@@ -90,7 +93,10 @@ public class Recipes {
         // System.out.println("Please enter recipe title or search words: ");
         // String searchWords = search.nextLine();
         
+    	System.out.println();
+    	System.out.println("============================");
         System.out.println("Getting " + word + "..." + "\n");
+        System.out.println("============================");
 
         // check for naive string match with recipe name.
         // first try to search by name
@@ -124,7 +130,10 @@ public class Recipes {
         		}
         	}
         	if(flag == 0) {
+        		System.out.println();
+        		System.out.println("====================================================");
         		System.out.println("\nAll recipes with your searching tag are found!\n");
+        		System.out.println("====================================================\n");
         		System.out.println(">> Please enter the recipe you would like to look at: ");
         		Scanner key = new Scanner(System.in);
                 String findWo = key.nextLine();
